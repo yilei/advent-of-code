@@ -69,11 +69,6 @@ print(
             )
         )
     )
-    and (
-        trips := [
-            get_trip(start, 0, False)
-            for start in [key for key in nodes if key.endswith("A")]
-        ]
-    )
+    and (trips := (get_trip(key, 0, False) for key in nodes if key.endswith("A")))
     and __import__("math").lcm(*trips) * len(instructions)
 )
