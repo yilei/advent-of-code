@@ -115,7 +115,6 @@ print(
                 for i, p in enumerate(critical_pipes)
             )
             % 2
-            == 1
         )
     )
     and sum(
